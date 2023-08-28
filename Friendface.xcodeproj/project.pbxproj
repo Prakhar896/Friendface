@@ -14,6 +14,9 @@
 		E213B7A02A9C281F0017F5F8 /* FriendfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213B79F2A9C281F0017F5F8 /* FriendfaceTests.swift */; };
 		E213B7AA2A9C281F0017F5F8 /* FriendfaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213B7A92A9C281F0017F5F8 /* FriendfaceUITests.swift */; };
 		E213B7AC2A9C281F0017F5F8 /* FriendfaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213B7AB2A9C281F0017F5F8 /* FriendfaceUITestsLaunchTests.swift */; };
+		E213B7B92A9C2F0A0017F5F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213B7B82A9C2F0A0017F5F8 /* User.swift */; };
+		E213B7BB2A9C322F0017F5F8 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213B7BA2A9C322F0017F5F8 /* Friend.swift */; };
+		E213B7BD2A9C32420017F5F8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213B7BC2A9C32420017F5F8 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		E213B7A52A9C281F0017F5F8 /* FriendfaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendfaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E213B7A92A9C281F0017F5F8 /* FriendfaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendfaceUITests.swift; sourceTree = "<group>"; };
 		E213B7AB2A9C281F0017F5F8 /* FriendfaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendfaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E213B7B82A9C2F0A0017F5F8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E213B7BA2A9C322F0017F5F8 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		E213B7BC2A9C32420017F5F8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 			children = (
 				E213B78E2A9C281E0017F5F8 /* FriendfaceApp.swift */,
 				E213B7902A9C281E0017F5F8 /* ContentView.swift */,
+				E213B7B82A9C2F0A0017F5F8 /* User.swift */,
+				E213B7BA2A9C322F0017F5F8 /* Friend.swift */,
+				E213B7BC2A9C32420017F5F8 /* ViewModel.swift */,
 				E213B7922A9C281F0017F5F8 /* Assets.xcassets */,
 				E213B7942A9C281F0017F5F8 /* Preview Content */,
 			);
@@ -257,8 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E213B7BD2A9C32420017F5F8 /* ViewModel.swift in Sources */,
+				E213B7B92A9C2F0A0017F5F8 /* User.swift in Sources */,
 				E213B7912A9C281E0017F5F8 /* ContentView.swift in Sources */,
 				E213B78F2A9C281E0017F5F8 /* FriendfaceApp.swift in Sources */,
+				E213B7BB2A9C322F0017F5F8 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
