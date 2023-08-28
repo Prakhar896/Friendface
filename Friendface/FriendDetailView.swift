@@ -122,6 +122,7 @@ struct FriendDetailView: View {
                                             Image(systemName: "\(friend.name.first?.lowercased() ?? "a").circle")
                                                 .font(.title)
                                             Text(friend.name)
+                                                .padding(.top, 3)
                                         }
                                         .padding(20)
                                         .background(.blue.opacity(0.4))
