@@ -96,32 +96,33 @@ struct ContentView: View {
                 appState.users = fetchedUsers.sorted { $0.name < $1.name }
                 print("FETCH REQUEST: Fetched data has replaced in-memory data.")
                 
-                var allFriendsAndOrigins: [String: Friend] = [:]
+                var usersAndFriendsMapped: [String: [Friend]] = [:]
                 for fetchedUser in fetchedUsers {
-                    for friend in fetchedUser.friends {
-                        allFriendsAndOrigins[fetchedUser.id] = friend
-                    }
+                    usersAndFriendsMapped[fetchedUser.id] = fetchedUser.friends
                 }
                 
-                for origin in allFriendsAndOrigins.keys {
-                    let targetFriend = allFriendsAndOrigins[origin]!
-                    let targetUser = (fetchedUsers.first { $0.id == origin })!
+                for userID in usersAndFriendsMapped.keys {
+                    let targetUser = (fetchedUsers.first { $0.id == userID })!
                     
-                    let cacheFriend = CachedFriend(context: moc)
-                    cacheFriend.id = targetFriend.id
-                    cacheFriend.name = targetFriend.name
+                    let cacheUser = CachedUser(context: moc)
+                    cacheUser.id = userID
+                    cacheUser.about = targetUser.about
+                    cacheUser.address = targetUser.address
+                    cacheUser.age = Int16(targetUser.age)
+                    cacheUser.company = targetUser.company
+                    cacheUser.email = targetUser.email
+                    cacheUser.isActive = targetUser.isActive
+                    cacheUser.name = targetUser.name
+                    cacheUser.registered = targetUser.registered
+                    cacheUser.tags = targetUser.tags.joined(separator: ",")
                     
-                    cacheFriend.origin = CachedUser(context: moc)
-                    cacheFriend.origin?.id = targetUser.id
-                    cacheFriend.origin?.about = targetUser.about
-                    cacheFriend.origin?.address = targetUser.address
-                    cacheFriend.origin?.age = Int16(targetUser.age)
-                    cacheFriend.origin?.company = targetUser.company
-                    cacheFriend.origin?.email = targetUser.email
-                    cacheFriend.origin?.isActive = targetUser.isActive
-                    cacheFriend.origin?.name = targetUser.name
-                    cacheFriend.origin?.registered = targetUser.registered
-                    cacheFriend.origin?.tags = targetUser.tags.joined(separator: ",")
+                    for friend in usersAndFriendsMapped[userID]! {
+                        let cacheFriend = CachedFriend(context: moc)
+                        cacheFriend.id = friend.id
+                        cacheFriend.name = friend.name
+                        
+                        cacheUser.addToFriends(cacheFriend)
+                    }
                 }
                 
                 try? moc.save()
