@@ -56,7 +56,7 @@ struct FriendDetailView: View {
     var body: some View {
         VStack(alignment: .leading) {
             if let user = user {
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     Spacer()
                     
                     ZStack {
