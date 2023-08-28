@@ -10,10 +10,8 @@ import Foundation
 class AppState: ObservableObject {
     @Published var users: [User] = []
     
-    static let debugMode: Bool = false
-    
-    func fetch() async {
-        if AppState.debugMode {
+    func fetch(_ debugMode: Bool) async {
+        if debugMode {
             loadSampleUsers()
             return
         }
@@ -25,7 +23,10 @@ class AppState: ObservableObject {
             decoder.dateDecodingStrategy = .iso8601
             
             let fetchedUsers = try decoder.decode([User].self, from: data)
-            users = fetchedUsers
+            
+            DispatchQueue.main.sync {
+                users = fetchedUsers
+            }
             
             print("Data fetch request complete.")
         } catch {
