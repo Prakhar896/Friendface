@@ -65,6 +65,19 @@ struct ContentView: View {
                         Image(systemName: "arrow.triangle.2.circlepath")
                     }
                 }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Reset") {
+                        Task {
+                            for localUser in localUsers {
+                                moc.delete(localUser)
+                            }
+                            
+                            try? moc.save()
+                            appState.users = []
+                        }
+                    }
+                }
             }
             .alert("Could Not Fetch Latest Data", isPresented: $showingFetchErrorAlert) {
                 Button("OK") {}
