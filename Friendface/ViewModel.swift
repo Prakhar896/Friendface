@@ -10,7 +10,7 @@ import Foundation
 class AppState: ObservableObject {
     @Published var users: [User] = []
     
-    static let debugMode: Bool = true
+    static let debugMode: Bool = false
     
     func fetch() async {
         if AppState.debugMode {
