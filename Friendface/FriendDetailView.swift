@@ -39,7 +39,7 @@ struct FriendDetailView: View {
     }
     
     var specialMaxWidth: CGFloat {
-        UIScreen.main.bounds.width * 0.9
+        UIScreen.main.bounds.width * 0.95
     }
     
     var notFoundError: some View {
@@ -84,7 +84,7 @@ struct FriendDetailView: View {
                         UserDetailDisplayView(parameter: "Email", value: user.email)
                         UserDetailDisplayView(parameter: "Address", value: user.address)
                         UserDetailDisplayView(parameter: "About", value: user.about)
-                        UserDetailDisplayView(parameter: "Registration Date", value: user.registered.formatted())
+                        UserDetailDisplayView(parameter: "Registration Date", value: user.registered.formatted(date: .long, time: .standard))
                         
                         // Tags
                         Text("Tags")
@@ -92,7 +92,7 @@ struct FriendDetailView: View {
                             .bold()
                             .padding(.horizontal)
                             .padding(.vertical, 4)
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(user.tags, id: \.self) { tag in
                                     HStack {
@@ -107,6 +107,31 @@ struct FriendDetailView: View {
                         .padding(.horizontal)
                         
                         // Friends
+                        Text("Friends")
+                            .font(.title3)
+                            .bold()
+                            .padding(.horizontal)
+                            .padding(.vertical, 4)
+                        ScrollView(.horizontal) {
+                            HStack {
+                                ForEach(user.friends, id: \.id) { friend in
+                                    NavigationLink {
+                                        FriendDetailView(appState: appState, givenUserID: friend.id)
+                                    } label: {
+                                        VStack {
+                                            Image(systemName: "\(friend.name.first?.lowercased() ?? "a").circle")
+                                                .font(.title)
+                                            Text(friend.name)
+                                        }
+                                        .padding(20)
+                                        .background(.blue.opacity(0.4))
+                                        .cornerRadius(10)
+                                        .foregroundColor(.primary)
+                                    }
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
                     }
                     .frame(maxWidth: specialMaxWidth)
                     .padding(.vertical, 20)
@@ -117,7 +142,8 @@ struct FriendDetailView: View {
                 notFoundError
             }
         }
-        .navigationTitle("Details")
+        .navigationTitle("Details for \(user?.name.components(separatedBy: " ")[0] ?? "Unknown")")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

@@ -36,10 +36,25 @@ struct ContentView: View {
             }
             .navigationTitle("Friendface")
             .task {
-                if appState.users.isEmpty {
-                    await appState.fetch(debugMode)
+                await fetchIfNeeded()
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        Task {
+                            await fetchIfNeeded(force: true)
+                        }
+                    } label: {
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                    }
                 }
             }
+        }
+    }
+    
+    func fetchIfNeeded(force: Bool = false) async {
+        if appState.users.isEmpty || force {
+            await appState.fetch(debugMode)
         }
     }
 }
