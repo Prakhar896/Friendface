@@ -10,7 +10,14 @@ import Foundation
 class AppState: ObservableObject {
     @Published var users: [User] = []
     
+    static let debugMode: Bool = true
+    
     func fetch() async {
+        if AppState.debugMode {
+            loadSampleUsers()
+            return
+        }
+        
         do {
             let (data, _) = try await URLSession.shared.data(from: URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!)
             

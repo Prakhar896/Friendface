@@ -30,7 +30,9 @@ struct ContentView: View {
             }
             .navigationTitle("Friendface")
             .task {
-                await appState.fetch()
+                if appState.users.isEmpty {
+                    await appState.fetch()
+                }
             }
         }
     }
