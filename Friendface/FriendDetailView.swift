@@ -154,8 +154,8 @@ struct FriendDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             FriendDetailView(appState: appState, givenUserID: "sample")
-                .task {
-                    await appState.fetch(true)
+                .onAppear {
+                    appState.loadSampleUsers()
                 }
         }
     }

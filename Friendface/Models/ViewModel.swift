@@ -6,33 +6,10 @@
 //
 
 import Foundation
+import CoreData
 
 class AppState: ObservableObject {
     @Published var users: [User] = []
-    
-    func fetch(_ debugMode: Bool) async {
-        if debugMode {
-            loadSampleUsers()
-            return
-        }
-        
-        do {
-            let (data, _) = try await URLSession.shared.data(from: URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!)
-            
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            
-            let fetchedUsers = try decoder.decode([User].self, from: data)
-            
-            DispatchQueue.main.sync {
-                users = fetchedUsers
-            }
-            
-            print("Data fetch request complete.")
-        } catch {
-            print("Error occured in fetch: \(error.localizedDescription)")
-        }
-    }
     
     func loadSampleUsers() {
         users = [

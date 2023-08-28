@@ -18,6 +18,12 @@
 		E213B7BB2A9C322F0017F5F8 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213B7BA2A9C322F0017F5F8 /* Friend.swift */; };
 		E213B7BD2A9C32420017F5F8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213B7BC2A9C32420017F5F8 /* ViewModel.swift */; };
 		E213B7C02A9C3BE10017F5F8 /* FriendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213B7BF2A9C3BE10017F5F8 /* FriendDetailView.swift */; };
+		E2FEA9DE2A9CDC72004486DE /* FriendfaceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2FEA9DC2A9CDC72004486DE /* FriendfaceDataModel.xcdatamodeld */; };
+		E2FEA9E02A9CDC9D004486DE /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEA9DF2A9CDC9D004486DE /* DataController.swift */; };
+		E2FEA9E52A9CDEFC004486DE /* CachedUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEA9E12A9CDEFC004486DE /* CachedUser+CoreDataClass.swift */; };
+		E2FEA9E62A9CDEFC004486DE /* CachedUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEA9E22A9CDEFC004486DE /* CachedUser+CoreDataProperties.swift */; };
+		E2FEA9E72A9CDEFC004486DE /* CachedFriend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEA9E32A9CDEFC004486DE /* CachedFriend+CoreDataClass.swift */; };
+		E2FEA9E82A9CDEFC004486DE /* CachedFriend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEA9E42A9CDEFC004486DE /* CachedFriend+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,12 @@
 		E213B7BA2A9C322F0017F5F8 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		E213B7BC2A9C32420017F5F8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E213B7BF2A9C3BE10017F5F8 /* FriendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailView.swift; sourceTree = "<group>"; };
+		E2FEA9DD2A9CDC72004486DE /* FriendfaceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendfaceDataModel.xcdatamodel; sourceTree = "<group>"; };
+		E2FEA9DF2A9CDC9D004486DE /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		E2FEA9E12A9CDEFC004486DE /* CachedUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2FEA9E22A9CDEFC004486DE /* CachedUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2FEA9E32A9CDEFC004486DE /* CachedFriend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedFriend+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2FEA9E42A9CDEFC004486DE /* CachedFriend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedFriend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +114,15 @@
 		E213B78D2A9C281E0017F5F8 /* Friendface */ = {
 			isa = PBXGroup;
 			children = (
+				E2FEA9E12A9CDEFC004486DE /* CachedUser+CoreDataClass.swift */,
+				E2FEA9E22A9CDEFC004486DE /* CachedUser+CoreDataProperties.swift */,
+				E2FEA9E32A9CDEFC004486DE /* CachedFriend+CoreDataClass.swift */,
+				E2FEA9E42A9CDEFC004486DE /* CachedFriend+CoreDataProperties.swift */,
 				E213B78E2A9C281E0017F5F8 /* FriendfaceApp.swift */,
 				E213B7902A9C281E0017F5F8 /* ContentView.swift */,
 				E213B7BF2A9C3BE10017F5F8 /* FriendDetailView.swift */,
+				E2FEA9DF2A9CDC9D004486DE /* DataController.swift */,
+				E2FEA9DC2A9CDC72004486DE /* FriendfaceDataModel.xcdatamodeld */,
 				E213B7BE2A9C3BCD0017F5F8 /* Models */,
 				E213B7922A9C281F0017F5F8 /* Assets.xcassets */,
 				E213B7942A9C281F0017F5F8 /* Preview Content */,
@@ -279,8 +297,14 @@
 			files = (
 				E213B7BD2A9C32420017F5F8 /* ViewModel.swift in Sources */,
 				E213B7B92A9C2F0A0017F5F8 /* User.swift in Sources */,
+				E2FEA9E62A9CDEFC004486DE /* CachedUser+CoreDataProperties.swift in Sources */,
 				E213B7912A9C281E0017F5F8 /* ContentView.swift in Sources */,
 				E213B7C02A9C3BE10017F5F8 /* FriendDetailView.swift in Sources */,
+				E2FEA9E52A9CDEFC004486DE /* CachedUser+CoreDataClass.swift in Sources */,
+				E2FEA9DE2A9CDC72004486DE /* FriendfaceDataModel.xcdatamodeld in Sources */,
+				E2FEA9E82A9CDEFC004486DE /* CachedFriend+CoreDataProperties.swift in Sources */,
+				E2FEA9E02A9CDC9D004486DE /* DataController.swift in Sources */,
+				E2FEA9E72A9CDEFC004486DE /* CachedFriend+CoreDataClass.swift in Sources */,
 				E213B78F2A9C281E0017F5F8 /* FriendfaceApp.swift in Sources */,
 				E213B7BB2A9C322F0017F5F8 /* Friend.swift in Sources */,
 			);
@@ -607,6 +631,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2FEA9DC2A9CDC72004486DE /* FriendfaceDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2FEA9DD2A9CDC72004486DE /* FriendfaceDataModel.xcdatamodel */,
+			);
+			currentVersion = E2FEA9DD2A9CDC72004486DE /* FriendfaceDataModel.xcdatamodel */;
+			path = FriendfaceDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E213B7832A9C281E0017F5F8 /* Project object */;
 }
