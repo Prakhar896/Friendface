@@ -23,7 +23,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Group {
-                if !fetching {
+                if !fetching || debugMode {
                     List {
                         ForEach(appState.users, id: \.id) { user in
                             NavigationLink {

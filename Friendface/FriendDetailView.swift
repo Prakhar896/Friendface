@@ -138,6 +138,8 @@ struct FriendDetailView: View {
                     .padding(.vertical, 20)
                     .background(.ultraThinMaterial)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                    
+                    Spacer()
                 }
             } else {
                 notFoundError
